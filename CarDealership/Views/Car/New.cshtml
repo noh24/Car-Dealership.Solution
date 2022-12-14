@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Your Car</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+      crossorigin="anonymous">
+  </head>
+  <body class="container">
+    <div class="container">
+      <nav class="navbar">
+        <a href='/'>Home</a>
+        <a href='/cars/new'>Add</a>
+        <a href='/cars'>See</a>
+      </nav>
+      <form action="/cars" method="post">
+        <label for="make">Make:</label>
+        <input id="make" name="make" type="text">
+        <br>
+        <label for="model">Model:</label>
+        <input id="model" name="model" type="text">
+        <br>
+        <label for="year">Year:</label>
+        <input id="year" name="year" type="text">
+        <br>
+        <label for="miles">Miles:</label>
+        <input id="miles" name="miles" type="text">
+        <br>
+        <label for="price">Price:</label>
+        <input id="price" name="price" type="text">
+        <br>
+        <label for="picture">Enter picture URL:</label>
+        <input id="picture" name="picture" type="text">
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+</body>
+</html>
