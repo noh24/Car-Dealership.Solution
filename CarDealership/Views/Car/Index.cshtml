@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Our Cars</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <a href='/'>Home</a>
+        <a href='/cars/new'>Add</a>
+        <a href='/cars'>See</a>
+      </nav>
+      @using CarDealership.Models;
+        
+      <h1>Our Cars:</h1>
+
+      @if (Model.Count == 0)
+      {
+        <p>There are no items in the list.</p>
+      }
+      <ul class="text-center list-unstyled p-4">
+        @foreach (Car car in Model)
+        {
+          <img src=@car.ImgURL alt="@car.Make @car.Model" width="400px" class="p-4">
+          <li>__________</li>
+          <li>Make: @car.Make</li>
+          <li>Model: @car.Model</li>
+          <li>Year: @car.Year</li>
+          <li>Miles: @car.Miles</li>
+          <li>Price: @car.Price</li>
+          <li>__________</li>
+          <form action="/cars/delete" method="post">
+            <button type="submit" value="@car.Id" name="id">Delete</button>
+          </form>
+        }
+      </ul>
+    </div>
+  </body>
+</html>
